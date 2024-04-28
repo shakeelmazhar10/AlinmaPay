@@ -1,0 +1,28 @@
+{
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es2015",
+    "strict": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "baseUrl": "./app/src",
+    "paths": {
+      "@app/*": ["*"],
+      "@components/*": ["components/*"],
+      "@screens/*": ["screens/*"],
+      "@navigation/*": ["navigation/*"],
+      "@redux/*": ["redux/*"],
+      "@hooks/*": ["hooks/*"],
+      "@context/*": ["context/*"],
+      "@assets/*": ["assets/*"],
+      "@api/*": ["api/*"],
+      "@services/*": ["services/*"],
+      "@i18n/*": ["i18n/*"],
+      "@utils/*": ["utils/*"],
+      "@theme/*": ["theme/*"]
+    }
+  },
+  /* Completeness */
+  "skipLibCheck": true /* Skip type checking all .d.ts files. */
+}
