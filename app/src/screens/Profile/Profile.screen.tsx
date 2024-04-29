@@ -1,7 +1,7 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StatusBar, TouchableOpacity, Alert } from 'react-native';
-import styles from '@screens/Home/Home.style';
+import { Alert, SafeAreaView, StatusBar, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import styles from './Profile.style';
 
 function Home({ navigation }: any) {
   return (

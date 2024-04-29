@@ -1,9 +1,9 @@
-import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/Ionicons';
-import { screenNames } from '@utils/enums';
 import Home from '@screens/Home/Home.screen';
 import Profile from '@screens/Profile/Profile.screen';
+import { screenNames } from '@utils/enums';
+import React from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
 

@@ -1,12 +1,12 @@
 import TabNavigation from '@navigation/tabNavigation';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import { useTypedSelector } from '@redux/store';
 import { screenNames } from '@utils/enums';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 function MainNavigation() {
   const { localisationFlag } = useTypedSelector((state) => state.localisationReducer);
