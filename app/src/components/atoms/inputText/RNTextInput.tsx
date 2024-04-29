@@ -1,11 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  TextInput,
-  TextStyle,
-  InputModeOptions,
-  KeyboardTypeOptions,
-} from 'react-native';
+import { TextInput, TextStyle, InputModeOptions, KeyboardTypeOptions } from 'react-native';
 import styles from './RNTextInput.style';
 
 /**
@@ -121,7 +116,7 @@ const RNTextInput: React.FC<RNTextInputProps> = ({
   onPressIn,
   onPressOut,
   onFocus,
-  onSubmitEditing,
+  onSubmitEditing
 }) => {
   const { t, i18n } = useTranslation();
 

@@ -4,14 +4,14 @@
 export const translations = {
   en: {
     translation: {
-      welcome: 'Welcome!',
-    },
+      welcome: 'Welcome!'
+    }
   },
   ar: {
     translation: {
-      welcome: 'مرحباً!',
-    },
-  },
+      welcome: 'مرحباً!'
+    }
+  }
 };
 
 export const appText = translations.ar.translation;

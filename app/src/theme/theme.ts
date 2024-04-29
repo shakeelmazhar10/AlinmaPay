@@ -7,28 +7,28 @@ export default {
   lightTheme: {
     colors: {
       backgroundColor: colors.white,
-      color: colors.black,
+      color: colors.black
     },
     icons: {
-      home: '',
-    },
+      home: ''
+    }
   },
   darkTheme: {
     colors: {
       backgroundColor: colors.black,
-      color: colors.white,
+      color: colors.white
     },
     icons: {
-      home: '',
-    },
+      home: ''
+    }
   },
   nationalDay: {
     colors: {
       backgroundColor: colors.green,
-      color: colors.white,
+      color: colors.white
     },
     icons: {
-      home: '',
-    },
-  },
+      home: ''
+    }
+  }
 };

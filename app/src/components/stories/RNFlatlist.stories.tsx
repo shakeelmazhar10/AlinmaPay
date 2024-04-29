@@ -10,7 +10,7 @@ interface RNFlatlistProps<T> extends Omit<FlatListProps<T>, 'renderItem'> {
   renderItem: (item: T) => React.ReactElement<any>;
   refreshControl?: React.ReactElement;
   horizontal?: boolean;
-  numColumns?: number
+  numColumns?: number;
 }
 
 // Sample data for testing
@@ -19,7 +19,7 @@ const sampleData = [
   { id: 2, name: 'Bob' },
   { id: 3, name: 'Charlie' },
   { id: 4, name: 'David' },
-  { id: 5, name: 'Eve' },
+  { id: 5, name: 'Eve' }
 ];
 
 // Template for rendering items
@@ -31,7 +31,7 @@ const Template: Story<RNFlatlistProps<any>> = (args) => <RNFlatlist {...args} />
 export const Default = Template.bind({});
 Default.args = {
   data: sampleData,
-  renderItem,
+  renderItem
 };
 
 // Horizontal FlatList
@@ -39,7 +39,7 @@ export const Horizontal = Template.bind({});
 Horizontal.args = {
   data: sampleData,
   renderItem,
-  horizontal: true,
+  horizontal: true
 };
 
 // FlatList with RefreshControl
@@ -47,7 +47,7 @@ export const WithRefreshControl = Template.bind({});
 WithRefreshControl.args = {
   data: sampleData,
   renderItem,
-  refreshControl: <RefreshControl refreshing={false} onRefresh={() => {}} />,
+  refreshControl: <RefreshControl refreshing={false} onRefresh={() => {}} />
 };
 
 // FlatList with Multiple Columns
@@ -55,7 +55,7 @@ export const MultipleColumns = Template.bind({});
 MultipleColumns.args = {
   data: sampleData,
   renderItem,
-  numColumns: 2,
+  numColumns: 2
 };
 
 const RNFlatlistMeta: Meta<RNFlatlistProps<any>> = {
@@ -66,8 +66,8 @@ const RNFlatlistMeta: Meta<RNFlatlistProps<any>> = {
       <RNView style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
         <Story />
       </RNView>
-    ),
-  ],
+    )
+  ]
 };
 
 export default RNFlatlistMeta;

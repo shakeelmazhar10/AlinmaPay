@@ -11,16 +11,17 @@ export const ENCRYPTION_REDUCER_KEY = 'getEncryptionKeys';
 export const encryptionApi = createApi({
   reducerPath: ENCRYPTION_REDUCER_KEY,
   baseQuery: fetchBaseQuery({
-    baseUrl,
+    baseUrl
   }),
   endpoints: (builder) => ({
     getEncryptionsKeys: builder.query<EncryptionApiResponse, string>({
-      query: (payload) => queryParam({
-        url: apiEndpoints.GET_ENCRYPTION_KEYS,
-        method: requestType.GET,
-      }),
-    }),
-  }),
+      query: (payload) =>
+        queryParam({
+          url: apiEndpoints.GET_ENCRYPTION_KEYS,
+          method: requestType.GET
+        })
+    })
+  })
 });
 
 export const { useGetEncryptionsKeys } = encryptionApi;

@@ -1,12 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  StatusBar,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import { SafeAreaView, View, Text, StatusBar, TouchableOpacity, StyleSheet } from 'react-native';
 import IconMaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Config from 'react-native-config';
 import useTheme from '@hooks/themeHook';
@@ -20,13 +13,11 @@ import styles from './Home.style';
 const users = [
   { id: 1, name: 'John Doe' },
   { id: 2, name: 'Jane Doe' },
-  { id: 3, name: 'Jordan Doe' },
+  { id: 3, name: 'Jordan Doe' }
 ];
 
 function Home({ navigation }: any) {
-  const { localisationFlag } = useTypedSelector(
-    (state) => state.localisationReducer,
-  );
+  const { localisationFlag } = useTypedSelector((state) => state.localisationReducer);
   const dipatch = useTypedDispatch();
   const { t, i18n } = useTranslation();
   const { colors, icons } = useTheme();
@@ -42,9 +33,7 @@ function Home({ navigation }: any) {
         {users.map((data: any) => (
           <View key={data?.id} style={styleUser}>
             <Text style={{ fontSize: 15 }}>
-              {data?.id}
-              .
-              {data?.name}
+              {data?.id}.{data?.name}
             </Text>
           </View>
         ))}
@@ -58,23 +47,12 @@ function Home({ navigation }: any) {
       <SafeAreaView style={styles.SafeAreaView1} />
       <SafeAreaView style={styles.SafeAreaView2}>
         <View style={styles.outerWrapper}>
-          <IconMaterialCommunityIcons
-            name="lock-alert-outline"
-            size={80}
-            color="green"
-          />
-          <IconMaterialCommunityIcons
-            name="wifi-lock-open"
-            size={50}
-            color="grey"
-          />
+          <IconMaterialCommunityIcons name="lock-alert-outline" size={80} color="green" />
+          <IconMaterialCommunityIcons name="wifi-lock-open" size={50} color="grey" />
           <Text>{t(`${appText.welcome}`)}</Text>
 
           <View>
-            <TouchableOpacity
-              style={styles.buttonStyle}
-              onPress={() => navigation?.navigate(screenNames.PROFILE)}
-            >
+            <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation?.navigate(screenNames.PROFILE)}>
               <Text style={styles.text}>Click here to go to profile Page:</Text>
             </TouchableOpacity>
             <ListUser />
@@ -89,7 +67,7 @@ const styleUser = StyleSheet.create<any>({
   borderBottomWidth: 1,
   borderColor: '#eee',
   padding: 1,
-  marginTop: 10,
+  marginTop: 10
 });
 
 export default Home;

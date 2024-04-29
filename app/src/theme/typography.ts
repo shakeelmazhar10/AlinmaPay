@@ -1,6 +1,6 @@
-import {Platform} from 'react-native';
+import { Platform } from 'react-native';
 
-import {scaleFont} from './mixins';
+import { scaleFont } from './mixins';
 
 /**
  * Font weights.
@@ -70,7 +70,7 @@ export const typography = {
   /**
    * Font for code snippets.
    */
-  code: Platform.select({ios: 'Courier', android: 'monospace'}),
+  code: Platform.select({ ios: 'Courier', android: 'monospace' }),
 
   // FONT WEIGHT
   FONT_WEIGHT_THIN,
@@ -103,5 +103,5 @@ export const typography = {
   /**
    * Create a custom font size.
    */
-  CUSTOME_FONT_SIZE: createCustomFontScale,
+  CUSTOME_FONT_SIZE: createCustomFontScale
 };

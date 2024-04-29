@@ -1,4 +1,4 @@
-import {constants} from '@utils/index';
+import { constants } from '@utils/index';
 
 /**
  * Represents the data returned in a successful response.
@@ -58,9 +58,9 @@ interface ParsedError {
  * @param {ResponseData} data - Data returned in the response.
  * @returns {ParsedSuccess} - Parsed success response.
  */
-const parseSuccess = ({data}: ResponseData): ParsedSuccess => ({
+const parseSuccess = ({ data }: ResponseData): ParsedSuccess => ({
   ...data,
-  ok: true,
+  ok: true
 });
 
 /**
@@ -68,7 +68,7 @@ const parseSuccess = ({data}: ResponseData): ParsedSuccess => ({
  * @param {ErrorResponse} response - Error response from the API.
  * @returns {ParsedError} - Parsed error response.
  */
-const parseError = ({response}: ErrorResponse): ParsedError => {
+const parseError = ({ response }: ErrorResponse): ParsedError => {
   let message: string, status: number;
   if (!response) {
     message = 'Check your network connection and try again.';
@@ -77,10 +77,10 @@ const parseError = ({response}: ErrorResponse): ParsedError => {
     message = response.message;
     status = response.status;
   }
-  return {status, message};
+  return { status, message };
 };
 
 export default {
   parseSuccess,
-  parseError,
+  parseError
 };

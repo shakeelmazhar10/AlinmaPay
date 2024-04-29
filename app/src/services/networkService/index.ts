@@ -48,11 +48,9 @@ const readResource = ({
   resource,
   authToken = null,
   params = null,
-  options = null,
+  options = null
 }: ResourceRequestParams): Promise<any> => {
-  const selectedOptions: SelectedOptionsProps = _.isEmpty(options)
-    ? defaultOptions(authToken, params)
-    : options;
+  const selectedOptions: SelectedOptionsProps = _.isEmpty(options) ? defaultOptions(authToken, params) : options;
   return handleResponse(axios.get(`${baseUrl}/${resource}`, selectedOptions));
 };
 
@@ -61,18 +59,9 @@ const readResource = ({
  * @param {ResourceRequestParams} params - Parameters for the request.
  * @returns {Promise<any>} - Promise representing the response.
  */
-const deleteResource = ({
-  authToken,
-  resource,
-  params,
-  options = null,
-}: ResourceRequestParams): Promise<any> => {
-  const selectedOptions: SelectedOptionsProps = _.isEmpty(options)
-    ? defaultOptions(authToken, params)
-    : options;
-  return handleResponse(
-    axios.delete(`${baseUrl}/${resource}`, selectedOptions),
-  );
+const deleteResource = ({ authToken, resource, params, options = null }: ResourceRequestParams): Promise<any> => {
+  const selectedOptions: SelectedOptionsProps = _.isEmpty(options) ? defaultOptions(authToken, params) : options;
+  return handleResponse(axios.delete(`${baseUrl}/${resource}`, selectedOptions));
 };
 
 /**
@@ -85,14 +74,10 @@ const updateResource = ({
   data,
   authToken = null,
   options = null,
-  params = null,
+  params = null
 }: ResourceRequestParams): Promise<any> => {
-  const selectedOptions: SelectedOptionsProps = _.isEmpty(options)
-    ? defaultOptions(authToken, params)
-    : options;
-  return handleResponse(
-    axios.post(`${baseUrl}/${resource}`, data, selectedOptions),
-  );
+  const selectedOptions: SelectedOptionsProps = _.isEmpty(options) ? defaultOptions(authToken, params) : options;
+  return handleResponse(axios.post(`${baseUrl}/${resource}`, data, selectedOptions));
 };
 
 /**
@@ -105,14 +90,10 @@ const createResource = ({
   data,
   authToken = null,
   options = null,
-  params = null,
+  params = null
 }: ResourceRequestParams): Promise<any> => {
-  const selectedOptions: SelectedOptionsProps = _.isEmpty(options)
-    ? defaultOptions(authToken, params)
-    : options;
-  return handleResponse(
-    axios.put(`${baseUrl}/${resource}`, data, selectedOptions),
-  );
+  const selectedOptions: SelectedOptionsProps = _.isEmpty(options) ? defaultOptions(authToken, params) : options;
+  return handleResponse(axios.put(`${baseUrl}/${resource}`, data, selectedOptions));
 };
 
 export { createResource, deleteResource, readResource, updateResource };

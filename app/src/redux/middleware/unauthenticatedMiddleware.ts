@@ -1,5 +1,5 @@
-import {isRejectedWithValue, Middleware} from '@reduxjs/toolkit';
-import {resetStateAction} from '@redux/actions/resetState';
+import { isRejectedWithValue, Middleware } from '@reduxjs/toolkit';
+import { resetStateAction } from '@redux/actions/resetState';
 
 /**
  * Middleware for handling unauthenticated responses from API requests.
@@ -8,9 +8,9 @@ import {resetStateAction} from '@redux/actions/resetState';
  */
 
 export const unauthenticatedMiddleware: Middleware =
-  ({dispatch}) =>
-  next =>
-  action => {
+  ({ dispatch }) =>
+  (next) =>
+  (action) => {
     if (isRejectedWithValue(action) && action?.payload?.status === 401) {
       dispatch(resetStateAction());
     }

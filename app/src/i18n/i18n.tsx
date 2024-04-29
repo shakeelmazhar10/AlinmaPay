@@ -42,8 +42,8 @@ i18n.use(initReactI18next).init({
     /**
      * Disable escaping of values since React already escapes values.
      */
-    escapeValue: false,
-  },
+    escapeValue: false
+  }
 });
 
 export default i18n;

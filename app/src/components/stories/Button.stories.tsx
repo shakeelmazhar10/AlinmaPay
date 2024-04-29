@@ -7,18 +7,18 @@ const MyButtonMeta: Meta<typeof MyButton> = {
   title: 'components/buttons/MyButton',
   component: MyButton,
   argTypes: {
-    onPress: { action: 'pressed the button' },
+    onPress: { action: 'pressed the button' }
   },
   args: {
-    text: 'Hello world',
+    text: 'Hello world'
   },
   decorators: [
     (Story) => (
       <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
         <Story />
       </View>
-    ),
-  ],
+    )
+  ]
 };
 
 export default MyButtonMeta;
@@ -27,6 +27,6 @@ export const Basic: StoryObj<typeof MyButton> = {};
 
 export const AnotherExample: StoryObj<typeof MyButton> = {
   args: {
-    text: 'Another example',
-  },
+    text: 'Another example'
+  }
 };

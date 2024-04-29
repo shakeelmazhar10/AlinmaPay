@@ -1,17 +1,17 @@
 /**
  * Defines a set of layout and styling constants for consistent design across the application.
  */
-import {Dimensions} from 'react-native';
-import {spacing} from './spacing';
-import {typography} from './typography';
-import {constants} from '@utils/index';
+import { Dimensions } from 'react-native';
+import { spacing } from './spacing';
+import { typography } from './typography';
+import { constants } from '@utils/index';
 
-const {width, height} = Dimensions.get('screen');
+const { width, height } = Dimensions.get('screen');
 
 export default {
   window: {
     width,
-    height,
+    height
   },
   isSmallDevice: width < constants.idleScreenWidth,
   defaultFontSize: typography.FONT_SIZE_10,
@@ -23,7 +23,6 @@ export default {
   defaultHeaderHeight: 70,
   defaultBottomPadding: 70,
   defaultHeaderIconSize: spacing.SCALE_16,
-  defaultPagePadding:
-    width < constants.idleScreenWidth ? spacing.SCALE_16 : spacing.SCALE_20,
-  defaultDateFormat: 'DD.MM.YY',
+  defaultPagePadding: width < constants.idleScreenWidth ? spacing.SCALE_16 : spacing.SCALE_20,
+  defaultDateFormat: 'DD.MM.YY'
 };

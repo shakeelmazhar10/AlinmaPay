@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text, TextStyle } from 'react-native';
-import styles from './RNText.style'; 
+import styles from './RNText.style';
 
 /**
  * Props for the RNText component.
@@ -30,10 +30,7 @@ const RNText: React.FC<RNTextProps> = ({ text, style, numberOfLines }: RNTextPro
   const { t, i18n } = useTranslation();
 
   return (
-    <Text
-      testID={t(`${text}`)}
-      numberOfLines={numberOfLines}
-      style={[styles.textStyle, style]}>
+    <Text testID={t(`${text}`)} numberOfLines={numberOfLines} style={[styles.textStyle, style]}>
       {t(`${text}`)}
     </Text>
   );

@@ -22,8 +22,8 @@ function navigate(routeName: string, params?: object) {
   navigator.dispatch(
     CommonActions.navigate({
       name: routeName,
-      params,
-    }),
+      params
+    })
   );
 }
 
@@ -34,8 +34,8 @@ function navigate(routeName: string, params?: object) {
 function push(routeName: string) {
   navigator.dispatch(
     StackActions.push({
-      name: routeName,
-    }),
+      name: routeName
+    })
   );
 }
 
@@ -55,8 +55,8 @@ function navigateAndReset(routeName: string, params?: object) {
   navigator.dispatch(
     CommonActions.reset({
       index: 0,
-      routes: [{ name: routeName, params }],
-    }),
+      routes: [{ name: routeName, params }]
+    })
   );
 }
 
@@ -69,8 +69,8 @@ function replace(routeName: string, params?: object) {
   navigator.dispatch(
     StackActions.replace({
       name: routeName,
-      params,
-    }),
+      params
+    })
   );
 }
 
@@ -91,5 +91,5 @@ export default {
   navigateAndReset,
   setTopLevelNavigator,
   replace,
-  popToTop,
+  popToTop
 };

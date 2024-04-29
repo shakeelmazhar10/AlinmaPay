@@ -7,24 +7,24 @@ const RNButtonMeta: Meta<typeof RNButton> = {
   title: 'components/buttons/RNButton',
   component: RNButton,
   argTypes: {
-    onPress: { action: 'pressed the button' },
+    onPress: { action: 'pressed the button' }
   },
   args: {
     btnText: 'Hello world',
     btnStyle: {
-      backgroundColor: 'red',
+      backgroundColor: 'red'
     },
     textStyle: {
-      color: 'white',
-    },
+      color: 'white'
+    }
   },
   decorators: [
     (Story) => (
       <RNView style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
         <Story />
       </RNView>
-    ),
-  ],
+    )
+  ]
 };
 
 export default RNButtonMeta;
@@ -36,7 +36,7 @@ export const SmallerButton: StoryObj<typeof RNButton> = {
     btnText: 'Hello world',
     btnStyle: {
       backgroundColor: 'green',
-      height: 40,
-    },
-  },
+      height: 40
+    }
+  }
 };

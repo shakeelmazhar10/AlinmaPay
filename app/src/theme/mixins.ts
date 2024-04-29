@@ -1,24 +1,22 @@
-import {Dimensions, PixelRatio, Platform, StatusBar} from 'react-native';
-import {constants} from '@utils/index';
+import { Dimensions, PixelRatio, Platform, StatusBar } from 'react-native';
+import { constants } from '@utils/index';
 
-const {width: WINDOW_WIDTH, height: WINDOW_HEIGHT} = Dimensions.get('window');
+const { width: WINDOW_WIDTH, height: WINDOW_HEIGHT } = Dimensions.get('window');
 const guidelineBaseWidth = constants.idleScreenWidth;
 
 /**
- * Scale based on width 
+ * Scale based on width
  * @param {number} size
  * @returns {number}
  */
-export const scaleSize = (size: number): number =>
-  (WINDOW_WIDTH / guidelineBaseWidth) * size;
+export const scaleSize = (size: number): number => (WINDOW_WIDTH / guidelineBaseWidth) * size;
 
 /**
  * Scale font size
  * @param  {number} size
  * @returns {number}
  */
-export const scaleFont = (size: number): number =>
-  size * PixelRatio.getFontScale();
+export const scaleFont = (size: number): number => size * PixelRatio.getFontScale();
 
 /**
  * Get styles dimensions for margin or padding
@@ -33,7 +31,7 @@ function dimensions(
   right: number = top,
   bottom: number = top,
   left: number = right,
-  property: 'margin' | 'padding',
+  property: 'margin' | 'padding'
 ): any {
   const styles: any = {};
 
@@ -52,12 +50,7 @@ function dimensions(
  * @param bottom {number} bottom margin
  * @param left {number} left margin
  */
-export function margin(
-  top: number,
-  right?: number,
-  bottom?: number,
-  left?: number,
-): any {
+export function margin(top: number, right?: number, bottom?: number, left?: number): any {
   return dimensions(top, right, bottom, left, 'margin');
 }
 
@@ -68,12 +61,7 @@ export function margin(
  * @param {number} bottom bottom padding
  * @param {number} left left padding
  */
-export function padding(
-  top: number,
-  right?: number,
-  bottom?: number,
-  left?: number,
-): any {
+export function padding(top: number, right?: number, bottom?: number, left?: number): any {
   return dimensions(top, right, bottom, left, 'padding');
 }
 
@@ -91,17 +79,12 @@ interface IboxShadow {
   opacity: number;
 }
 
-export const boxShadow = ({
-  color,
-  offset = {height: 2, width: 2},
-  radius = 8,
-  opacity = 0.2,
-}: IboxShadow): any => ({
+export const boxShadow = ({ color, offset = { height: 2, width: 2 }, radius = 8, opacity = 0.2 }: IboxShadow): any => ({
   shadowColor: color,
   shadowOffset: offset,
   shadowOpacity: opacity,
   shadowRadius: radius,
-  elevation: radius,
+  elevation: radius
 });
 
 // You can use this helper function which enables you to get the
@@ -123,5 +106,5 @@ export const isIPhoneX = () =>
 export const StatusBarHeight = Platform.select({
   ios: isIPhoneX() ? 44 : 20,
   android: StatusBar.currentHeight,
-  default: 0,
+  default: 0
 });

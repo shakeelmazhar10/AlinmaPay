@@ -1,22 +1,13 @@
+import { encryptionApi } from '@api/encryption';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/query';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { Reducer } from 'redux';
-import {
-  FLUSH,
-  PAUSE,
-  PERSIST,
-  persistStore,
-  PURGE,
-  REGISTER,
-  REHYDRATE,
-} from 'redux-persist';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { setupListeners } from '@reduxjs/toolkit/query';
+import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistStore } from 'redux-persist';
 import persistReducer from 'redux-persist/es/persistReducer';
 import { RESET_STATE_ACTION_TYPE } from './actions/resetState';
 import { unauthenticatedMiddleware } from './middleware/unauthenticatedMiddleware';
-import { encryptionKeysSlice } from './slices/encryptionKeysSlice';
-import { encryptionApi } from '@api/encryption';
 import localisationSlice from './slices/localisationSlice';
 import themeSlice from './slices/themeSlice';
 
@@ -26,7 +17,7 @@ import themeSlice from './slices/themeSlice';
 const reducers = {
   [encryptionApi.reducerPath]: encryptionApi.reducer,
   localisationReducer: localisationSlice,
-  themeReducer: themeSlice,
+  themeReducer: themeSlice
 };
 
 /**
@@ -51,7 +42,7 @@ export const rootReducer: Reducer<RootState> = (state, action) => {
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['localisationSlice', 'themeSlice'],
+  whitelist: ['localisationSlice', 'themeSlice']
 };
 
 /**
@@ -68,12 +59,12 @@ export const store = configureStore({
   /**
    * Middleware setup for the Redux store.
    */
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }).concat([unauthenticatedMiddleware, encryptionApi.middleware]),
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
+      }
+    }).concat([unauthenticatedMiddleware, encryptionApi.middleware])
 });
 
 /**

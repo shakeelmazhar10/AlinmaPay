@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  StatusBar,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
+import { SafeAreaView, View, Text, StatusBar, TouchableOpacity, Alert } from 'react-native';
 import styles from '@screens/Home/Home.style';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -19,20 +12,9 @@ function Home({ navigation }: any) {
         <View style={styles.outerWrapper}>
           <Icon name="finger-print-sharp" size={100} color="green" />
           <View>
-            <TouchableOpacity
-              onPress={() => Alert.alert('this is Profile Screen')}
-              style={styles.buttonStyle}
-            >
+            <TouchableOpacity onPress={() => Alert.alert('this is Profile Screen')} style={styles.buttonStyle}>
               <Text style={styles.text}>
-                this is
-                {' '}
-                <Text style={{ fontWeight: 'bold', color: 'green' }}>
-                  {' '}
-                  PROFILE
-                  {' '}
-                </Text>
-                {' '}
-                screen
+                this is <Text style={{ fontWeight: 'bold', color: 'green' }}> PROFILE </Text> screen
               </Text>
             </TouchableOpacity>
           </View>
@@ -41,7 +23,7 @@ function Home({ navigation }: any) {
           style={{
             alignContent: 'flex-end',
             alignItems: 'flex-end',
-            padding: 10,
+            padding: 10
           }}
         >
           <Text style={{ color: '#808080' }}>by Handi.dev</Text>

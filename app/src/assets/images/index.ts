@@ -1,5 +1,5 @@
 const images = {
-  home: require(''),
+  home: require('')
 };
 
 export default images;

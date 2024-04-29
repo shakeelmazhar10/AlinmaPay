@@ -1,10 +1,10 @@
-import {scaleSize} from './mixins';
+import { scaleSize } from './mixins';
 
 /**
  * This fucntion is used to get a custom scale size.
  * It calculates the percentage for that number with respects to screen witdth.
- * It expects a number and return a number. 
- * @param {number} value 
+ * It expects a number and return a number.
+ * @param {number} value
  * @returns {number}
  */
 const createCustomScale = (value: number): number => {
@@ -166,5 +166,5 @@ export const spacing = {
   SCALE_2,
   SCALE_1,
   SCALE_0,
-  CUSTOME_SCALE,
+  CUSTOME_SCALE
 };

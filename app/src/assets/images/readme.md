@@ -1,2 +1,3 @@
 # Image
-store your all images in images/ folder 
+
+store your all images in images/ folder

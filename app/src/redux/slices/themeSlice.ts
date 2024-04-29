@@ -1,4 +1,4 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 /**
  * Interface representing the initial state shape for theme settings.
@@ -11,7 +11,7 @@ interface ThemeInitialStateProps {
  * Initial state for the theme slice.
  */
 const initialState: ThemeInitialStateProps = {
-  appTheme: 'lightTheme',
+  appTheme: 'lightTheme'
 };
 
 /**
@@ -28,8 +28,8 @@ export const themeSlice = createSlice({
      */
     setTheme(state, action: PayloadAction<string>) {
       state.appTheme = action.payload;
-    },
-  },
+    }
+  }
 });
 
 /**

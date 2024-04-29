@@ -12,16 +12,16 @@ const RNTextMeta: Meta<typeof RNText> = {
     style: {
       color: colors.black,
       fontSize: SCALE_16,
-      fontWeight: '500',
-    },
+      fontWeight: '500'
+    }
   },
   decorators: [
     (Story) => (
       <RNView style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
         <Story />
       </RNView>
-    ),
-  ],
+    )
+  ]
 };
 
 export default RNTextMeta;
@@ -34,9 +34,9 @@ export const SmallerText: StoryObj<typeof RNText> = {
     style: {
       color: colors.green,
       fontSize: SCALE_12,
-      fontWeight: '200',
-    },
-  },
+      fontWeight: '200'
+    }
+  }
 };
 
 export const LargerText: StoryObj<typeof RNText> = {
@@ -45,7 +45,7 @@ export const LargerText: StoryObj<typeof RNText> = {
     style: {
       color: colors.black,
       fontSize: SCALE_20,
-      fontWeight: '700',
-    },
-  },
+      fontWeight: '700'
+    }
+  }
 };

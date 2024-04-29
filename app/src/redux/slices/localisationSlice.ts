@@ -1,5 +1,5 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {languages} from '@utils/enums';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { languages } from '@utils/enums';
 
 /**
  * Interface representing the initial state shape for localisation settings.
@@ -12,7 +12,7 @@ interface LocalisationInitialStateProps {
  * Initial state for the localisation slice.
  */
 const initialState: LocalisationInitialStateProps = {
-  localisationFlag: languages.EN,
+  localisationFlag: languages.EN
 };
 
 /**
@@ -29,8 +29,8 @@ export const localisationSlice = createSlice({
      */
     setLocalisation(state, action: PayloadAction<string>) {
       state.localisationFlag = action.payload;
-    },
-  },
+    }
+  }
 });
 
 /**

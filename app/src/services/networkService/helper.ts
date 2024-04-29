@@ -1,5 +1,5 @@
 import FormData from 'form-data';
-import {Platform} from 'react-native';
+import { Platform } from 'react-native';
 import responseService from './responseService';
 
 /**
@@ -34,16 +34,13 @@ export type RequestOptions = {
  * @param {object | null} params - Query parameters.
  * @returns {RequestOptions} - Default request options.
  */
-const defaultOptions = (
-  authToken: string | null = null,
-  params: object | null = null,
-): RequestOptions => ({
+const defaultOptions = (authToken: string | null = null, params: object | null = null): RequestOptions => ({
   timeout,
   headers: {
     Authorization: authToken,
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/json'
   },
-  params,
+  params
 });
 
 /**
@@ -55,8 +52,8 @@ const defaultUploadOptions = (authToken: string): RequestOptions => ({
   timeout,
   headers: {
     Authorization: authToken,
-    'Content-Type': 'multipart/form-data',
-  },
+    'Content-Type': 'multipart/form-data'
+  }
 });
 
 /**
@@ -64,12 +61,12 @@ const defaultUploadOptions = (authToken: string): RequestOptions => ({
  * @param {object} data - Data containing the file URI.
  * @returns {FormData} - Form data for uploading files.
  */
-const createFormData = (data: {uri: string}): FormData => {
+const createFormData = (data: { uri: string }): FormData => {
   const form = new FormData();
   form.append('attachment', {
     uri: Platform.OS === 'android' ? data.uri : data.uri.replace('file://', ''),
     type: 'image/jpeg',
-    name: 'picture',
+    name: 'picture'
   });
   form.append('type', 'channel');
   return form;
@@ -82,11 +79,11 @@ const createFormData = (data: {uri: string}): FormData => {
  */
 const handleResponse = (responsePromise: Promise<any>): Promise<any> =>
   responsePromise
-    .then(response => {
+    .then((response) => {
       return responseService.parseSuccess(response);
     })
-    .catch(error => {
+    .catch((error) => {
       return responseService.parseError(error);
     });
 
-export {createFormData, defaultOptions, defaultUploadOptions, handleResponse};
+export { createFormData, defaultOptions, defaultUploadOptions, handleResponse };
