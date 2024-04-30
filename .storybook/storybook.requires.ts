@@ -6,21 +6,34 @@ import {
   getProjectAnnotations,
 } from "@storybook/react-native";
 
-import "@storybook/addon-ondevice-controls/register";
-import "@storybook/addon-ondevice-actions/register";
+import "@storybook/addon-essentials/register";
+import "@storybook/addon-react-native-web/register";
 
 const normalizedStories = [
   {
     titlePrefix: "",
-    directory: "./app/src",
-    files: "**/*.stories.?(ts|tsx|js|jsx)",
+    directory: "./app/src/components/stories",
+    files: "**/*.stories.mdx",
     importPathMatcher:
-      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.mdx)$/,
     // @ts-ignore
     req: require.context(
-      "../app/src",
+      "../app/src/components/stories",
       true,
-      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.mdx)$/
+    ),
+  },
+  {
+    titlePrefix: "",
+    directory: "./app/src/components",
+    files: "**/*.stories.@(js|jsx|ts|tsx)",
+    importPathMatcher:
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(js|jsx|ts|tsx))$/,
+    // @ts-ignore
+    req: require.context(
+      "../app/src/components",
+      true,
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(js|jsx|ts|tsx))$/
     ),
   },
 ];
@@ -33,7 +46,6 @@ declare global {
 const annotations = [
   require("./preview"),
   require("@storybook/react-native/dist/preview"),
-  require("@storybook/addon-actions/preview"),
 ];
 
 global.STORIES = normalizedStories;
