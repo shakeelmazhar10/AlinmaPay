@@ -1,6 +1,6 @@
+import { RNPressable, RNText } from '@components/atoms/index';
 import React from 'react';
 import { TextStyle, ViewStyle } from 'react-native';
-import { RNText, RNPressable } from '@components/atoms/index';
 import styles from './RNButton.style';
 
 /**
