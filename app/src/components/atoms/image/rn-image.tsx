@@ -1,24 +1,7 @@
 import React from 'react';
-import { Image, ImageSourcePropType, ImageStyle } from 'react-native';
+import { Image, ImageSourcePropType } from 'react-native';
 import styles from './rn-image.style';
-
-/**
- * Props for the RNImage component.
- */
-interface RNImageProps {
-  /**
-   * testID for the flatlist to test the element.
-   */
-  testID?: string;
-  /**
-   * Style for the image.
-   */
-  style?: ImageStyle;
-  /**
-   * Source of the image. It can be a local asset or a URL.
-   */
-  image: string;
-}
+import { RNImageProps } from './rn-image.interface';
 
 /**
  * A component to display images with support for local and remote sources.
