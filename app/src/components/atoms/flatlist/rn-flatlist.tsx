@@ -1,11 +1,15 @@
 import React from 'react';
 import { FlatList, FlatListProps, ViewStyle } from 'react-native';
-import styles from './RNFlatlist.style';
+import styles from './rn-flatlist.style';
 
 /**
  * Props for the RNFlatlist component.
  */
 interface RNFlatlistProps<T> extends Omit<FlatListProps<T>, 'renderItem'> {
+  /**
+   * testID for the flatlist to test the element.
+   */
+  testID?: string;
   /**
    * Style for the container of the flatlist.
    */
@@ -33,6 +37,7 @@ interface RNFlatlistProps<T> extends Omit<FlatListProps<T>, 'renderItem'> {
  * @template T - The type of data items in the flatlist.
  */
 const RNFlatlist = <T extends any>({
+  testID,
   style,
   data,
   renderItem,
@@ -42,6 +47,7 @@ const RNFlatlist = <T extends any>({
 }: RNFlatlistProps<T>): JSX.Element => {
   return (
     <FlatList
+      testID={testID}
       style={[styles.mainContainer, style]}
       data={data}
       renderItem={({ item }) => renderItem(item)} // Pass the item to the renderItem function

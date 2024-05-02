@@ -1,11 +1,15 @@
 import React from 'react';
 import { ScrollView, ViewStyle } from 'react-native';
-import styles from './RNScrollView.style';
+import styles from './rn-scrollview.style';
 
 /**
  * Props for the RNScrollView component.
  */
 interface RNScrollViewProps {
+  /**
+   * testID for the flatlist to test the element.
+   */
+  testID?: string;
   /**
    * The children components to be rendered inside the ScrollView.
    */
@@ -30,6 +34,7 @@ interface RNScrollViewProps {
  * @returns {JSX.Element} - The rendered component.
  */
 const RNScrollView: React.FC<RNScrollViewProps> = ({
+  testID,
   children,
   style,
   horizontal,
@@ -37,7 +42,7 @@ const RNScrollView: React.FC<RNScrollViewProps> = ({
   ...rest
 }: RNScrollViewProps): JSX.Element => {
   return (
-    <ScrollView style={[styles.container, style]} horizontal={horizontal} refreshControl={refreshControl} {...rest}>
+    <ScrollView testID={testID} style={[styles.container, style]} horizontal={horizontal} refreshControl={refreshControl} {...rest}>
       {children}
     </ScrollView>
   );

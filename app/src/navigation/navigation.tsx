@@ -1,4 +1,4 @@
-import TabNavigation from '@navigation/tabNavigation';
+import TabNavigation from '@app/navigation/tab-navigation';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useTypedSelector } from '@redux/store';

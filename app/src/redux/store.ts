@@ -1,4 +1,4 @@
-import { encryptionApi } from '@api/encryption';
+import { encryptionApi } from '@app/services/api/encryption';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
@@ -6,10 +6,10 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { Reducer } from 'redux';
 import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistStore } from 'redux-persist';
 import persistReducer from 'redux-persist/es/persistReducer';
-import { RESET_STATE_ACTION_TYPE } from './actions/resetState';
-import { unauthenticatedMiddleware } from './middleware/unauthenticatedMiddleware';
-import localisationSlice from './slices/localisationSlice';
-import themeSlice from './slices/themeSlice';
+import { RESET_STATE_ACTION_TYPE } from './actions/reset-state';
+import { unauthenticatedMiddleware } from './middleware/unauthenticated-middleware';
+import localisationSlice from './slices/localisation-slice';
+import themeSlice from './slices/theme-slice';
 
 /**
  * Object containing all the reducers used in the application.

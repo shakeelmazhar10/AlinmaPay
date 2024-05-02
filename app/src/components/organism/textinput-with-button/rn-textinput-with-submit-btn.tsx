@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import { TextStyle, ViewStyle } from 'react-native';
 import { RNView } from '@components/atoms';
 import { RNButton, RNTextInputWithHeading } from '@components/molecules';
-import styles from './RNTextInputWithSubmitBtn.style';
+import styles from './rn-textinput-with-submit-btn.style';
 
 /**
  * Props for the RNTextInputWithSubmitBtn component.
  */
 interface RNTextInputWithSubmitBtnProps {
+  /**
+   * testID for the flatlist to test the element.
+   */
+  testID?: string;
   /**
    * The heading text for the input field.
    */
@@ -20,7 +24,7 @@ interface RNTextInputWithSubmitBtnProps {
   /**
    * Style for the container of the component.
    */
-  containerStyles?: ViewStyle;
+  containerStyles?: ViewStyle | undefined;
   /**
    * Style for the container of the input field.
    */
@@ -49,6 +53,7 @@ interface RNTextInputWithSubmitBtnProps {
  * @returns {JSX.Element} - The rendered component.
  */
 const RNTextInputWithSubmitBtn: React.FC<RNTextInputWithSubmitBtnProps> = ({
+  testID,
   inputTextHeading = 'Enter your name',
   onPressBtn,
   containerStyles,
@@ -57,7 +62,7 @@ const RNTextInputWithSubmitBtn: React.FC<RNTextInputWithSubmitBtnProps> = ({
   inputTextStyles,
   btnStyle,
   btnTextStyles
-}) => {
+}: RNTextInputWithSubmitBtnProps): JSX.Element => {
   const [text, setText] = useState<string>('');
 
   /**
@@ -68,7 +73,7 @@ const RNTextInputWithSubmitBtn: React.FC<RNTextInputWithSubmitBtnProps> = ({
   };
 
   return (
-    <RNView style={[styles.container, containerStyles]}>
+    <RNView testID={testID} style={[styles.container, containerStyles]}>
       <RNTextInputWithHeading
         heading={inputTextHeading}
         onChangeTextCallback={setText}

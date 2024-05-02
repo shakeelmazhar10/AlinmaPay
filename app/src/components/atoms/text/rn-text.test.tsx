@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import RNText from './RNText';
+import RNText from './rn-text';
 
 describe('RNText Component', () => {
   test('renders text correctly', () => {

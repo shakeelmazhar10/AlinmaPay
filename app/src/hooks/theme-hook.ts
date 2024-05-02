@@ -1,4 +1,4 @@
-import { ThemeType } from '@utils/typesAndInterfaces';
+import { ThemeType } from '@app/utils/types-and-interfaces';
 import { useTypedSelector } from '@redux/store';
 import theme from '@theme/index';
 

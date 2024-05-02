@@ -1,3 +1,5 @@
+import { FONT_WEIGHT_EXTRA_BOLD } from '@app/theme/typography';
+import colors from '@theme/colors';
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
@@ -6,21 +8,27 @@ export default StyleSheet.create({
     paddingTop: 10,
     paddingHorizontal: 10
   },
-  SafeAreaView1: { backgroundColor: '#FFF', flex: 0 },
-  SafeAreaView2: { flex: 1, backgroundColor: '#FFF' },
+  SafeAreaView1: { backgroundColor: colors.white, flex: 0 },
+  SafeAreaView2: { flex: 1, backgroundColor: colors.white },
   outerWrapper: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#FFF'
+    backgroundColor: colors.white
   },
   buttonStyle: {
-    backgroundColor: '#EEE',
+    backgroundColor: colors.lightGrey,
     paddingHorizontal: 40,
     paddingVertical: 30,
     borderWidth: 0.5,
-    borderColor: '#F0F0F0',
+    borderColor: colors.gray94,
     borderRadius: 10
   },
-  text: { fontSize: 18, color: '#808080', fontWeight: 'bold' }
+  text: { fontSize: 18, color: colors.grey, fontWeight: FONT_WEIGHT_EXTRA_BOLD },
+  ListView: {
+    borderBottomWidth: 1,
+    borderColor: colors.lightGrey,
+    padding: 1,
+    marginTop: 10
+  }
 });

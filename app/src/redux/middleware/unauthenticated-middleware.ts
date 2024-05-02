@@ -1,5 +1,5 @@
 import { isRejectedWithValue, Middleware } from '@reduxjs/toolkit';
-import { resetStateAction } from '@redux/actions/resetState';
+import { resetStateAction } from '@app/redux/actions/reset-state';
 
 /**
  * Middleware for handling unauthenticated responses from API requests.

@@ -12,7 +12,7 @@ const RNTextInputWithHeadingMeta: Meta<typeof RNTextInputWithHeading> = {
     onChangeTextCallback: { action: 'Text entered' }
   },
   args: {
-    placeholder: 'Enter Name',
+    heading: 'Enter Name',
     containerStyle: {
       height: SCALE_60,
       width: '90%',
@@ -49,7 +49,7 @@ export const Basic: StoryObj<typeof RNTextInputWithHeadingMeta> = {};
 
 export const SmallerTextInput: StoryObj<typeof RNTextInputWithHeading> = {
   args: {
-    placeholder: 'Enter Age',
+    heading: 'Enter Age',
     containerStyle: {
       height: SCALE_60,
       width: '50%',

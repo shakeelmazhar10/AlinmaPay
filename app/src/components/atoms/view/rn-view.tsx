@@ -1,11 +1,15 @@
 import React from 'react';
 import { View, ViewStyle } from 'react-native';
-import styles from './RNView.style';
+import styles from './rn-view.style';
 
 /**
  * Props for the RNView component.
  */
 interface RNViewProps {
+  /**
+   * testID for the flatlist to test the element.
+   */
+  testID?: string;
   /**
    * The children components to be rendered inside the View.
    */
@@ -13,7 +17,7 @@ interface RNViewProps {
   /**
    * Style for the View container.
    */
-  style?: (ViewStyle | { flex: number } | undefined)[];
+  style?: ViewStyle | ViewStyle[];
 }
 
 /**
@@ -21,8 +25,12 @@ interface RNViewProps {
  * @param {RNViewProps} props - The props for the RNView component.
  * @returns {JSX.Element} - The rendered component.
  */
-const RNView: React.FC<RNViewProps> = ({ children, style }: RNViewProps): JSX.Element => {
-  return <View style={[styles.container, style]}>{children}</View>;
+const RNView: React.FC<RNViewProps> = ({ testID, children, style }: RNViewProps): JSX.Element => {
+  return (
+    <View testID={testID} style={[styles.container, style]}>
+      {children}
+    </View>
+  );
 };
 
 export default RNView;

@@ -1,6 +1,6 @@
 import FormData from 'form-data';
 import { Platform } from 'react-native';
-import responseService from './responseService';
+import responseService from './response-service';
 
 /**
  * Timeout duration for network requests.

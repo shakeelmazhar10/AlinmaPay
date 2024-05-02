@@ -9,7 +9,7 @@ let navigator: any;
  * Sets the top-level navigator reference.
  * @param {any} navigatorRef - Reference to the top-level navigator.
  */
-function setTopLevelNavigator(navigatorRef: any) {
+const setTopLevelNavigator = (navigatorRef: any): void => {
   navigator = navigatorRef;
 }
 
@@ -18,7 +18,7 @@ function setTopLevelNavigator(navigatorRef: any) {
  * @param {string} routeName - The name of the route to navigate to.
  * @param {object} [params] - Parameters to pass to the route.
  */
-function navigate(routeName: string, params?: object) {
+const navigate = (routeName: string, params?: object): void => {
   navigator.dispatch(
     CommonActions.navigate({
       name: routeName,
@@ -31,7 +31,7 @@ function navigate(routeName: string, params?: object) {
  * Pushes a new route onto the navigation stack.
  * @param {string} routeName - The name of the route to push.
  */
-function push(routeName: string) {
+const push = (routeName: string): void => {
   navigator.dispatch(
     StackActions.push({
       name: routeName
@@ -42,7 +42,7 @@ function push(routeName: string) {
 /**
  * Goes back to the previous screen in the navigation stack.
  */
-function goBack() {
+const goBack = (): void => {
   navigator.dispatch(CommonActions.goBack());
 }
 
@@ -51,7 +51,7 @@ function goBack() {
  * @param {string} routeName - The name of the route to navigate to.
  * @param {object} [params] - Parameters to pass to the route.
  */
-function navigateAndReset(routeName: string, params?: object) {
+const navigateAndReset = (routeName: string, params?: object): void => {
   navigator.dispatch(
     CommonActions.reset({
       index: 0,
@@ -65,7 +65,7 @@ function navigateAndReset(routeName: string, params?: object) {
  * @param {string} routeName - The name of the route to replace with.
  * @param {object} [params] - Parameters to pass to the route.
  */
-function replace(routeName: string, params?: object) {
+const replace = (routeName: string, params?: object): void => {
   navigator.dispatch(
     StackActions.replace({
       name: routeName,
@@ -77,7 +77,7 @@ function replace(routeName: string, params?: object) {
 /**
  * Pops all screens from the stack except the first one.
  */
-function popToTop() {
+const popToTop = (): void => {
   navigator.dispatch(StackActions.popToTop());
 }
 

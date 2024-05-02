@@ -1,5 +1,5 @@
 import CryptoJS from 'crypto-js';
-import { ApiHeaderProps, EncryptionVariableProps } from '@utils/typesAndInterfaces';
+import { ApiHeaderProps, EncryptionVariableProps } from '@app/utils/types-and-interfaces';
 import { constants } from '@utils/index';
 
 export const queryParam = ({ url, method, body }: ApiHeaderProps): object => ({

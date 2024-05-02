@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { TextStyle, ViewStyle } from 'react-native';
 import { RNText, RNTextInput, RNView } from '@components/atoms/index';
-import styles from './RNTextInputWithHeading.style';
+import styles from './rn-textinput-with-heading.style';
 
 /**
  * Props for the RNTextInputWithHeading component.
  */
 interface RNTextInputWithHeadingProps {
+  /**
+   * testID for the flatlist to test the element.
+   */
+  testID?: string;
   /**
    * The heading text to be displayed above the input field.
    */
@@ -36,12 +40,13 @@ interface RNTextInputWithHeadingProps {
  * @returns {JSX.Element} - The rendered component.
  */
 const RNTextInputWithHeading: React.FC<RNTextInputWithHeadingProps> = ({
+  testID,
   heading = 'Enter Name',
   containerStyle,
   headingStyles,
   inputTextStyles,
   onChangeTextCallback
-}) => {
+}: RNTextInputWithHeadingProps): JSX.Element => {
   const [text, setText] = useState<string>('');
 
   /**
@@ -54,7 +59,7 @@ const RNTextInputWithHeading: React.FC<RNTextInputWithHeadingProps> = ({
   };
 
   return (
-    <RNView style={[styles.container, containerStyle]}>
+    <RNView testID={testID} style={[styles.container, containerStyle]}>
       <RNText text={heading} style={[headingStyles]} />
       <RNTextInput text={text} onChangeText={onChangeText} style={[inputTextStyles]} />
     </RNView>

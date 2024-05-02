@@ -1,12 +1,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { TextInput, TextStyle, InputModeOptions, KeyboardTypeOptions } from 'react-native';
-import styles from './RNTextInput.style';
+import styles from './rn-textinput.style';
 
 /**
  * Props for the RNTextInput component.
  */
 interface RNTextInputProps {
+  /**
+   * testID for the flatlist to test the element.
+   */
+  testID?: string;
   /**
    * Unique identifier for the input field.
    */
@@ -97,6 +101,7 @@ interface RNTextInputProps {
  * @returns {JSX.Element} - The rendered component.
  */
 const RNTextInput: React.FC<RNTextInputProps> = ({
+  testID,
   text,
   style,
   numberOfLines,
@@ -117,12 +122,12 @@ const RNTextInput: React.FC<RNTextInputProps> = ({
   onPressOut,
   onFocus,
   onSubmitEditing
-}) => {
+}: RNTextInputProps): JSX.Element => {
   const { t, i18n } = useTranslation();
 
   return (
     <TextInput
-      testID={t(`${text}`)}
+      testID={testID}
       value={t(`${text}`)}
       numberOfLines={numberOfLines}
       style={[styles.textInputStyle, style]}

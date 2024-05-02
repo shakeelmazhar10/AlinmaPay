@@ -1,12 +1,16 @@
 import React from 'react';
 import { ViewStyle, Pressable } from 'react-native';
 import colors from '@theme/colors';
-import styles from './RNPressable.style';
+import styles from './rn-pressable.style';
 
 /**
  * Props for the RNPressable component.
  */
 interface RNPressableProps {
+  /**
+   * testID for the flatlist to test the element.
+   */
+  testID?: string;
   /**
    * The children components to be rendered inside the Pressable.
    */
@@ -43,6 +47,7 @@ interface RNPressableProps {
  * @returns {JSX.Element} - The rendered component.
  */
 const RNPressable: React.FC<RNPressableProps> = ({
+  testID,
   children,
   style,
   disabled,
@@ -53,6 +58,7 @@ const RNPressable: React.FC<RNPressableProps> = ({
 }: RNPressableProps): JSX.Element => {
   return (
     <Pressable
+      testID={testID}
       style={({ pressed }) => [
         styles.container,
         style,
