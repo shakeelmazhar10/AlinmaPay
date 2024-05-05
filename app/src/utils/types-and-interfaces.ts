@@ -38,7 +38,7 @@ export type ThemeType = 'lightTheme' | 'darkTheme' | 'nationalDay';
 /**
  * Represents the type of localization settings.
  */
-export type localisationType = {
+export type localizationType = {
   /**
    * The selected language for localization.
    */

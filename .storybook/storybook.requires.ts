@@ -12,13 +12,13 @@ import "@storybook/addon-react-native-web/register";
 const normalizedStories = [
   {
     titlePrefix: "",
-    directory: "./app/src/components/stories",
+    directory: "./app/src/components",
     files: "**/*.stories.mdx",
     importPathMatcher:
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.mdx)$/,
     // @ts-ignore
     req: require.context(
-      "../app/src/components/stories",
+      "../app/src/components",
       true,
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.mdx)$/
     ),

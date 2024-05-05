@@ -25,7 +25,7 @@ export default StyleSheet.create({
     borderRadius: 10
   },
   text: { fontSize: 18, color: colors.grey, fontWeight: FONT_WEIGHT_EXTRA_BOLD },
-  profileText: { fontWeight: FONT_WEIGHT_EXTRA_BOLD, color: colors.green },
+  profileText: { fontWeight: FONT_WEIGHT_EXTRA_BOLD, color: colors.white },
   footerView: {
     alignContent: 'flex-end',
     alignItems: 'flex-end',

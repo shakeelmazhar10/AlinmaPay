@@ -8,7 +8,7 @@ import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistStore } from 
 import persistReducer from 'redux-persist/es/persistReducer';
 import { RESET_STATE_ACTION_TYPE } from './actions/reset-state';
 import { unauthenticatedMiddleware } from './middleware/unauthenticated-middleware';
-import localisationSlice from './slices/localisation-slice';
+import localizationSlice from './slices/localization-slice';
 import themeSlice from './slices/theme-slice';
 
 /**
@@ -16,7 +16,7 @@ import themeSlice from './slices/theme-slice';
  */
 const reducers = {
   [encryptionApi.reducerPath]: encryptionApi.reducer,
-  localisationReducer: localisationSlice,
+  localizationReducer: localizationSlice,
   themeReducer: themeSlice
 };
 
@@ -42,7 +42,7 @@ export const rootReducer: Reducer<RootState> = (state, action) => {
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['localisationSlice', 'themeSlice']
+  whitelist: ['localizationSlice', 'themeSlice']
 };
 
 /**

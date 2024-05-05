@@ -9,12 +9,12 @@ import { useTranslation } from 'react-i18next';
 const Stack = createStackNavigator();
 
 function MainNavigation() {
-  const { localisationFlag } = useTypedSelector((state) => state.localisationReducer);
+  const { localizationFlag } = useTypedSelector((state) => state.localizationReducer);
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    i18n.changeLanguage(localisationFlag);
-  }, [localisationFlag]);
+    i18n.changeLanguage(localizationFlag);
+  }, [localizationFlag]);
 
   return (
     <NavigationContainer>

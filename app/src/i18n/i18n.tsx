@@ -26,11 +26,11 @@ i18n.use(initReactI18next).init({
   /**
    * Default language.
    */
-  lng: languages.EN,
+  lng: 'en',
   /**
    * Fallback language in case translation is not available.
    */
-  fallbackLng: languages.EN,
+  // fallbackLng: languages.EN,
   /**
    * Enable debug mode for logging.
    */

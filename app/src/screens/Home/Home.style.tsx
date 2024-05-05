@@ -1,3 +1,4 @@
+import { spacing } from '@app/theme/spacing';
 import { FONT_WEIGHT_EXTRA_BOLD } from '@app/theme/typography';
 import colors from '@theme/colors';
 import { StyleSheet } from 'react-native';
@@ -24,7 +25,7 @@ export default StyleSheet.create({
     borderColor: colors.gray94,
     borderRadius: 10
   },
-  text: { fontSize: 18, color: colors.grey, fontWeight: FONT_WEIGHT_EXTRA_BOLD },
+  text: { fontSize: 16, color: colors.white, fontWeight: FONT_WEIGHT_EXTRA_BOLD },
   ListView: {
     borderBottomWidth: 1,
     borderColor: colors.lightGrey,
