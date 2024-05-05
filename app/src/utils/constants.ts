@@ -1,7 +1,7 @@
 /**
  * Defines a set of constants.
  */
-export default {
+const constants =  {
   encryptionKeys: [],
   idleScreenWidth: 375,
   idleScreenHeight: 812,
@@ -14,3 +14,5 @@ export default {
     { id: 3, name: 'Jordan Doe' }
   ]
 };
+
+export default constants;

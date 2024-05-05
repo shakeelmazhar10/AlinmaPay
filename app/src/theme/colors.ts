@@ -1,7 +1,7 @@
 /**
  * Defines a set of color variables for easy access and consistency.
  */
-export default {
+const colors = {
   primary: '#ffffff',
   white: '#fff',
   black: '#000',
@@ -12,3 +12,5 @@ export default {
   grey: '808080',
   creamWhite: '#f9f9f9'
 };
+
+export default colors;

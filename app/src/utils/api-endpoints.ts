@@ -1,6 +1,8 @@
 /**
  * Defines a set of API endpoints.
  */
-export default {
+const apiEndpoints = {
   GET_ENCRYPTION_KEYS: '/encryption'
 };
+
+export default apiEndpoints;

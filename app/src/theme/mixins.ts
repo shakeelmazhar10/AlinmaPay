@@ -26,13 +26,13 @@ export const scaleFont = (size: number): number => size * PixelRatio.getFontScal
  * @param {number} left left margin
  * @param {'margin' | 'padding'} property dimension type
  */
-function dimensions(
+const dimensions = (
   top: number,
   right: number = top,
   bottom: number = top,
   left: number = right,
   property: 'margin' | 'padding'
-): any {
+): any => {
   const styles: any = {};
 
   styles[`${property}Top`] = top;
@@ -41,7 +41,7 @@ function dimensions(
   styles[`${property}Left`] = left;
 
   return styles;
-}
+};
 
 /**
  * Get styles for margin
@@ -50,9 +50,9 @@ function dimensions(
  * @param bottom {number} bottom margin
  * @param left {number} left margin
  */
-export function margin(top: number, right?: number, bottom?: number, left?: number): any {
+export const margin = (top: number, right?: number, bottom?: number, left?: number): any => {
   return dimensions(top, right, bottom, left, 'margin');
-}
+};
 
 /**
  * Get styles for padding
@@ -61,9 +61,9 @@ export function margin(top: number, right?: number, bottom?: number, left?: numb
  * @param {number} bottom bottom padding
  * @param {number} left left padding
  */
-export function padding(top: number, right?: number, bottom?: number, left?: number): any {
+export const padding = (top: number, right?: number, bottom?: number, left?: number): any => {
   return dimensions(top, right, bottom, left, 'padding');
-}
+};
 
 /**
  * Get box shadow style object

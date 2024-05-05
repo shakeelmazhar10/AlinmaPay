@@ -8,7 +8,7 @@ import { constants } from '@utils/index';
 
 const { width, height } = Dimensions.get('screen');
 
-export default {
+const layout =  {
   window: {
     width,
     height
@@ -26,3 +26,5 @@ export default {
   defaultPagePadding: width < constants.idleScreenWidth ? spacing.SCALE_16 : spacing.SCALE_20,
   defaultDateFormat: 'DD.MM.YY'
 };
+
+export default layout;

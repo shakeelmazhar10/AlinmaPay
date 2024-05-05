@@ -3,7 +3,7 @@
  */
 import colors from './colors';
 
-export default {
+const theme = {
   lightTheme: {
     colors: {
       backgroundColor: colors.white,
@@ -32,3 +32,5 @@ export default {
     }
   }
 };
+
+export default theme;
