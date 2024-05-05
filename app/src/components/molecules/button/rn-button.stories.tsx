@@ -1,7 +1,7 @@
+import { RNView } from '@components/atoms';
+import { RNButton } from '@components/molecules';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { RNButton } from '@components/molecules';
-import { RNView } from '@components/atoms';
 
 const RNButtonMeta: Meta<typeof RNButton> = {
   title: 'components/buttons/RNButton',
@@ -12,7 +12,8 @@ const RNButtonMeta: Meta<typeof RNButton> = {
   args: {
     btnText: 'Hello world',
     btnStyle: {
-      backgroundColor: 'red'
+      backgroundColor: 'red',
+      height: 40
     },
     textStyle: {
       color: 'white'
