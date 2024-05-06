@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     borderColor: colors.vibrantBlue
   },
   isOffParent: {
-    backgroundColor: 'red',
+    backgroundColor: colors.white,
     alignItems: 'flex-start',
     borderColor: colors.white
   },

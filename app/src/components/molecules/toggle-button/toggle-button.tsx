@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import styles from './toggle-button.style';
 import { RNPressable, RNView } from '@components/atoms';
 import { ToggleButtonProps } from './toggle-button.interface';
+import styles from './toggle-button.style';
 
 /**
  * ToggleButton component for toggling between two states.
@@ -9,28 +9,34 @@ import { ToggleButtonProps } from './toggle-button.interface';
  * @returns {JSX.Element} A ToggleButton component.
  */
 const ToggleButton: React.FC<ToggleButtonProps> = ({
+  testID,
   style,
   toggleState,
   onToggleChange = () => {}
 }: ToggleButtonProps): JSX.Element => {
-  const [isOn, setIsOn] = useState<boolean>(false);
+  const [isOn, setIsOn] = useState<boolean>(true);
 
   useEffect(() => {
     if (toggleState !== undefined) {
+      console.debug("toggleState: ", toggleState)
+
       setIsOn(toggleState);
     }
   }, [toggleState]);
 
   const onPress = () => {
     setIsOn((prevState: boolean) => {
-        console.debug("prevState: ", prevState)
-      onToggleChange(!prevState);
-      return !prevState;
+      const newState = !prevState;
+      console.log('newState: ', newState);
+
+      onToggleChange(newState);
+      return newState;
     });
-  }
+  };
 
   return (
     <RNPressable
+      testID={testID}
       activeOpacity={1}
       style={[styles.container, isOn ? styles.isOnParent : styles.isOffParent, style]}
       onPress={onPress}

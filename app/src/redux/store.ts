@@ -42,7 +42,7 @@ export const rootReducer: Reducer<RootState> = (state, action) => {
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['localizationSlice', 'themeSlice']
+  whitelist: ['localizationFlag']
 };
 
 /**

@@ -1,9 +1,13 @@
-import { ViewStyle } from "react-native";
+import { ViewStyle } from 'react-native';
 
 /**
  * Props for ToggleButton component.
  */
 export interface ToggleButtonProps {
+  /**
+   * testID for the flatlist to test the element.
+   */
+  testID?: string;
   /**
    * Custom styles for the ToggleButton.
    */

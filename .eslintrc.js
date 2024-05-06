@@ -5,7 +5,17 @@ module.exports = {
     node: true,
     jest: true
   },
-  extends: ['airbnb', 'airbnb/hooks', 'plugin:@typescript-eslint/recommended-type-checked', 'plugin:@typescript-eslint/stylistic-type-checked', '@react-native-community', 'plugin:jest/recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:@typescript-eslint/eslint-recommended', 'plugin:storybook/recommended'],
+  extends: [
+    'airbnb',
+    'airbnb/hooks',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
+    '@react-native-community',
+    'plugin:jest/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/eslint-recommended'
+  ],
   overrides: [
     {
       env: {

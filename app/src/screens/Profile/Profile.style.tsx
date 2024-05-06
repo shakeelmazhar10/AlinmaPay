@@ -2,7 +2,7 @@ import { FONT_WEIGHT_EXTRA_BOLD } from '@theme/typography';
 import colors from '@theme/colors';
 import { StyleSheet } from 'react-native';
 
-export default StyleSheet.create({
+const styles =  StyleSheet.create({
   container: {
     flexGrow: 1,
     paddingTop: 10,
@@ -35,3 +35,5 @@ export default StyleSheet.create({
      color: colors.grey
   }
 });
+
+export default styles;

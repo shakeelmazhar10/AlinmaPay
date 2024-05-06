@@ -16,7 +16,7 @@ const Home = ({ navigation }: any): JSX.Element => {
   const dispatch = useTypedDispatch();
   const { t, i18n } = useTranslation();
   const { localizationFlag } = useTypedSelector((state) => state.localizationReducer);
-
+  console.debug("localizationFlag: ", localizationFlag)
   const localizationText = useLocalization();
 
   const onToggleChange = () => {
@@ -47,7 +47,7 @@ const Home = ({ navigation }: any): JSX.Element => {
 
   return (
     <SafeAreaViewComp>
-      <ToggleButton onToggleChange={onToggleChange} />
+      <ToggleButton toggleState={localizationFlag === languages.EN} onToggleChange={onToggleChange} />
       <RNView style={styles.outerWrapper}>
         <IconMaterialCommunityIcons name="lock-alert-outline" size={80} color={colors.green} />
         <IconMaterialCommunityIcons name="wifi-lock-open" size={50} color={colors.grey} />

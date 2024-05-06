@@ -4,7 +4,7 @@ import { ToggleButton } from '@components/molecules';
 import { RNView } from '@components/atoms';
 
 const ToggleButtonMeta: Meta<typeof ToggleButton> = {
-  title: 'components/buttons/RNButton',
+  title: 'components/buttons/ToggleButton',
   component: ToggleButton,
   argTypes: {
     onToggleChange: { action: 'pressed the button' }
