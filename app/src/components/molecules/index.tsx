@@ -1,7 +1,8 @@
 /**
  * Exports a collection of molecule-level components for easy import.
  */
-import RNButton from '@components/molecules/button/RNButton';
-import RNTextInputWithHeading from '@components/molecules/textInputWithHeading/RNTextInputWithHeading';
+import RNButton from '@components/molecules/button/rn-button';
+import RNTextInputWithHeading from '@components/molecules/textinput-with-heading/rn-textinput-with-heading';
+import ToggleButton from '@components/molecules/toggle-button/toggle-button'
 
-export { RNButton, RNTextInputWithHeading };
+export { RNButton, RNTextInputWithHeading, ToggleButton };

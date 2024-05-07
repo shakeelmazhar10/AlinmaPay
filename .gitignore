@@ -79,4 +79,3 @@ yarn-error.log
 
 # ignore docs
 /docs
-android/local.properties

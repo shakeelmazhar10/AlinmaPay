@@ -2,7 +2,7 @@ const path = require('path');
 
 /** @type{import("@storybook/react-webpack5").StorybookConfig} */
 export default {
-  stories: ['../app/src/components/stories/**/*.stories.mdx', '../app/src/components/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../app/src/components/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: ['@storybook/addon-essentials', '@storybook/addon-react-native-web'],
   framework: {
     name: '@storybook/react-webpack5',

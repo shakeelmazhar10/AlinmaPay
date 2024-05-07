@@ -1,73 +1,67 @@
-import React, { useEffect } from 'react';
-import { SafeAreaView, View, Text, StatusBar, TouchableOpacity, StyleSheet } from 'react-native';
+import React from 'react';
 import IconMaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Config from 'react-native-config';
-import useTheme from '@hooks/themeHook';
 import { useTypedDispatch, useTypedSelector } from '@redux/store';
-import { setLocalisation } from '@redux/slices/localisationSlice';
+import { setLocalization } from '@redux/slices/localization-slice';
 import { useTranslation } from 'react-i18next';
 import { languages, screenNames } from '@utils/enums';
-import { appText } from '@i18n/translations';
-import styles from './Home.style';
+import styles from './home.style';
+import { constants } from '@utils/index';
+import { RNPressable, RNText, RNView } from '@components/atoms';
+import colors from '@theme/colors';
+import { SafeAreaViewComp } from '@components/pages';
+import { ToggleButton } from '@components/molecules';
+import useLocalization from '@hooks/localization.hook';
 
-const users = [
-  { id: 1, name: 'John Doe' },
-  { id: 2, name: 'Jane Doe' },
-  { id: 3, name: 'Jordan Doe' }
-];
-
-function Home({ navigation }: any) {
-  const { localisationFlag } = useTypedSelector((state) => state.localisationReducer);
-  const dipatch = useTypedDispatch();
+const Home = ({ navigation }: any): JSX.Element => {
+  const dispatch = useTypedDispatch();
   const { t, i18n } = useTranslation();
-  const { colors, icons } = useTheme();
+  const { localizationFlag } = useTypedSelector((state) => state.localizationReducer);
+  console.debug("localizationFlag: ", localizationFlag)
+  const localizationText = useLocalization();
 
-  useEffect(() => {
-    console.debug('::BASE_URL:: ', Config.BASE_URL);
-    dipatch(setLocalisation(languages.AR));
-  }, [Config.BASE_URL]);
+  const onToggleChange = () => {
+    const newLanguage = localizationFlag === languages.EN ? languages.AR : languages.EN;
+    i18n
+      .changeLanguage(newLanguage)
+      .then(() => {
+        dispatch(setLocalization(newLanguage));
+      })
+      .catch((error) => {
+        console.error('Error changing language:', error);
+      });
+  };
 
-  function ListUser() {
+  const ListUser = (): JSX.Element => {
     return (
       <>
-        {users.map((data: any) => (
-          <View key={data?.id} style={styleUser}>
-            <Text style={{ fontSize: 15 }}>
+        {constants.users.map((data: any) => (
+          <RNView key={data?.id} style={styles.ListView}>
+            <RNText style={{ fontSize: 15 }}>
               {data?.id}.{data?.name}
-            </Text>
-          </View>
+            </RNText>
+          </RNView>
         ))}
       </>
     );
-  }
+  };
 
   return (
-    <>
-      <StatusBar barStyle="dark-content" backgroundColor="#f9f9f9" />
-      <SafeAreaView style={styles.SafeAreaView1} />
-      <SafeAreaView style={styles.SafeAreaView2}>
-        <View style={styles.outerWrapper}>
-          <IconMaterialCommunityIcons name="lock-alert-outline" size={80} color="green" />
-          <IconMaterialCommunityIcons name="wifi-lock-open" size={50} color="grey" />
-          <Text>{t(`${appText.welcome}`)}</Text>
+    <SafeAreaViewComp>
+      <ToggleButton toggleState={localizationFlag === languages.EN} onToggleChange={onToggleChange} />
+      <RNView style={styles.outerWrapper}>
+        <IconMaterialCommunityIcons name="lock-alert-outline" size={80} color={colors.green} />
+        <IconMaterialCommunityIcons name="wifi-lock-open" size={50} color={colors.grey} />
+        <RNText>{t(localizationText.welcome)}</RNText>
 
-          <View>
-            <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation?.navigate(screenNames.PROFILE)}>
-              <Text style={styles.text}>Click here to go to profile Page:</Text>
-            </TouchableOpacity>
-            <ListUser />
-          </View>
-        </View>
-      </SafeAreaView>
-    </>
+        <RNView>
+          <RNPressable style={styles.buttonStyle} onPress={() => navigation?.navigate(screenNames.PROFILE)}>
+            <RNText style={styles.text}>{t(localizationText.redirect_to_profile)}</RNText>
+          </RNPressable>
+          <ListUser />
+        </RNView>
+      </RNView>
+    </SafeAreaViewComp>
   );
-}
-
-const styleUser = StyleSheet.create<any>({
-  borderBottomWidth: 1,
-  borderColor: '#eee',
-  padding: 1,
-  marginTop: 10
-});
+};
 
 export default Home;

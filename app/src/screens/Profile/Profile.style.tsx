@@ -1,26 +1,39 @@
+import { FONT_WEIGHT_EXTRA_BOLD } from '@theme/typography';
+import colors from '@theme/colors';
 import { StyleSheet } from 'react-native';
 
-export default StyleSheet.create({
+const styles =  StyleSheet.create({
   container: {
     flexGrow: 1,
     paddingTop: 10,
     paddingHorizontal: 10
   },
-  SafeAreaView1: { backgroundColor: '#FFF', flex: 0 },
-  SafeAreaView2: { flex: 1, backgroundColor: '#FFF' },
+  SafeAreaView1: { backgroundColor: colors.white, flex: 0 },
+  SafeAreaView2: { flex: 1, backgroundColor: colors.white },
   outerWrapper: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#FFF'
+    backgroundColor: colors.white
   },
   buttonStyle: {
-    backgroundColor: '#EEE',
+    backgroundColor: colors.white,
     paddingHorizontal: 40,
     paddingVertical: 30,
     borderWidth: 0.5,
-    borderColor: '#F0F0F0',
+    borderColor: colors.gray94,
     borderRadius: 10
   },
-  text: { fontSize: 18, color: '#808080', fontWeight: 'bold' }
+  text: { fontSize: 18, color: colors.grey, fontWeight: FONT_WEIGHT_EXTRA_BOLD },
+  profileText: { fontWeight: FONT_WEIGHT_EXTRA_BOLD, color: colors.white },
+  footerView: {
+    alignContent: 'flex-end',
+    alignItems: 'flex-end',
+    padding: 10
+  },
+  footerText: {
+     color: colors.grey
+  }
 });
+
+export default styles;
