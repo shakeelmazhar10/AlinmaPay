@@ -2,7 +2,7 @@ import { Dimensions, PixelRatio, Platform, StatusBar } from 'react-native';
 import { constants } from '@utils/index';
 
 const { width: WINDOW_WIDTH, height: WINDOW_HEIGHT } = Dimensions.get('window');
-const guidelineBaseWidth = constants.idleScreenWidth;
+const guidelineBaseWidth = constants.IDLE_SCREEN_WIDTH;
 
 /**
  * Scale based on width
@@ -92,10 +92,10 @@ export const boxShadow = ({ color, offset = { height: 2, width: 2 }, radius = 8,
 // is done to get the different StatusBar height when >= iPhone X
 // (with notch) is used.
 
-const X_WIDTH = constants.idleScreenWidth,
-  X_HEIGHT = constants.idleScreenHeight,
-  XSMAX_WIDTH = constants.xsMaxScreenWidth,
-  XSMAX_HEIGHT = constants.xsMaxScreenHeight;
+const X_WIDTH = constants.IDLE_SCREEN_WIDTH,
+  X_HEIGHT = constants.IDLE_SCREEN_HEIGHT,
+  XSMAX_WIDTH = constants.XS_MAX_SCREEN_WIDTH,
+  XSMAX_HEIGHT = constants.XS_MAX_SCREEN_HEIGHT;
 
 export const isIPhoneX = () =>
   Platform.OS === 'ios' && !Platform.isPad
