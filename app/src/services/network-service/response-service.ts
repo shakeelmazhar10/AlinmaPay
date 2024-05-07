@@ -72,7 +72,7 @@ const parseError = ({ response }: ErrorResponse): ParsedError => {
   let message: string, status: number;
   if (!response) {
     message = 'Check your network connection and try again.';
-    status = constants.networkConnectionError;
+    status = constants.NETWORK_CONNECTION_ERROR;
   } else {
     message = response.message;
     status = response.status;

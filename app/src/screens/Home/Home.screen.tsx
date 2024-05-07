@@ -16,7 +16,6 @@ const Home = ({ navigation }: any): JSX.Element => {
   const dispatch = useTypedDispatch();
   const { t, i18n } = useTranslation();
   const { localizationFlag } = useTypedSelector((state) => state.localizationReducer);
-  console.debug("localizationFlag: ", localizationFlag)
   const localizationText = useLocalization();
 
   const onToggleChange = () => {
@@ -34,7 +33,7 @@ const Home = ({ navigation }: any): JSX.Element => {
   const ListUser = (): JSX.Element => {
     return (
       <>
-        {constants.users.map((data: any) => (
+        {constants.USERS.map((data: any) => (
           <RNView key={data?.id} style={styles.ListView}>
             <RNText style={{ fontSize: 15 }}>
               {data?.id}.{data?.name}

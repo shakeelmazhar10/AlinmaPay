@@ -24,5 +24,17 @@
     }
   },
   /* Completeness */
-  "skipLibCheck": true /* Skip type checking all .d.ts files. */
+  "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+  "include": [
+    "app/**/*.ts",
+    "app/**/*.js",
+    "app/**/*.tsx",
+    "test/**/*.ts",
+    ".prettierrc.js",
+    ".eslintrc.js",
+    "eslint.config.mjs",
+    "./*.js",
+    "./*.ts"
+  ],
+  "exclude": ["docs/**/*.ts", "docs/**/*.js", "metro.config.js"]
 }

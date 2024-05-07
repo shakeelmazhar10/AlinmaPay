@@ -29,7 +29,7 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: './tsconfig.eslint.json',
+    project: './tsconfig.json',
     ecmaVersion: 2021,
     sourceType: 'module'
   },
@@ -43,6 +43,18 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 'off',
     'react/display-name': 'off',
     'react/prop-types': 'off',
+    // Rules extracted from the document
+    'max-len': ['error', { code: 100 }],
+    'no-nested-ternary': 'error',
+    camelcase: ['error', { properties: 'always' }],
+    'no-undef': 'error',
+    'max-lines-per-function': ['error', { max: 50 }],
+    'sort-imports': 'error',
+    'prefer-arrow-callback': 'error',
+    'prefer-template': 'error',
+    'no-console': 'error',
+    'no-debugger': 'error',
+    // Ensure ESLint and Prettier play nice together
     'prettier/prettier': ['error', { endOfLine: 'auto' }]
   }
-};
+}

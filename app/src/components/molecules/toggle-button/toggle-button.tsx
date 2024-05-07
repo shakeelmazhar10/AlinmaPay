@@ -18,8 +18,6 @@ const ToggleButton: React.FC<ToggleButtonProps> = ({
 
   useEffect(() => {
     if (toggleState !== undefined) {
-      console.debug("toggleState: ", toggleState)
-
       setIsOn(toggleState);
     }
   }, [toggleState]);
@@ -27,8 +25,6 @@ const ToggleButton: React.FC<ToggleButtonProps> = ({
   const onPress = () => {
     setIsOn((prevState: boolean) => {
       const newState = !prevState;
-      console.log('newState: ', newState);
-
       onToggleChange(newState);
       return newState;
     });

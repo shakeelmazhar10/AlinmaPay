@@ -3,9 +3,9 @@ import { ApiHeaderProps, EncryptionVariableProps } from '@app/utils/types-and-in
 import { constants } from '@utils/index';
 
 export const queryParam = ({ url, method, body }: ApiHeaderProps): object => ({
-  url: encryptVariable(url, constants?.encryptionKeys?.urlKey),
-  method: encryptVariable(method, constants?.encryptionKeys?.methodKey),
-  body: encryptVariable(body, constants?.encryptionKeys?.bodyKey)
+  url: encryptVariable(url, constants?.ENCRYPTIONS_KEYS?.urlKey),
+  method: encryptVariable(method, constants?.ENCRYPTIONS_KEYS?.methodKey),
+  body: encryptVariable(body, constants?.ENCRYPTIONS_KEYS?.bodyKey)
 });
 
 export const encryptVariable = ({ variable, encryptionKey }: EncryptionVariableProps): string =>

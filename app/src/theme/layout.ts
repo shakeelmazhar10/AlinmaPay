@@ -13,7 +13,7 @@ const layout =  {
     width,
     height
   },
-  isSmallDevice: width < constants.idleScreenWidth,
+  isSmallDevice: width < constants.IDLE_SCREEN_WIDTH,
   defaultFontSize: typography.FONT_SIZE_10,
   defaultTitleSize: typography.FONT_SIZE_33,
   btnRadius: spacing.SCALE_50,
@@ -23,7 +23,7 @@ const layout =  {
   defaultHeaderHeight: 70,
   defaultBottomPadding: 70,
   defaultHeaderIconSize: spacing.SCALE_16,
-  defaultPagePadding: width < constants.idleScreenWidth ? spacing.SCALE_16 : spacing.SCALE_20,
+  defaultPagePadding: width < constants.IDLE_SCREEN_WIDTH ? spacing.SCALE_16 : spacing.SCALE_20,
   defaultDateFormat: 'DD.MM.YY'
 };
 
