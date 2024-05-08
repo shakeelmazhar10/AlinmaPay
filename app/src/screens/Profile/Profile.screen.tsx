@@ -6,8 +6,8 @@ import styles from './profile.style';
 import { RNPressable, RNText, RNView } from '@components/atoms';
 import { SCALE_100 } from '@theme/spacing';
 import colors from '@theme/colors';
-import { SafeAreaViewComp } from '@components/pages';
-import useLocalization from '@hooks/localization.hook';
+import { SafeAreaViewComp } from '@components/templates';
+import useLocalization from '@localization/localization.hook';
 
 const Profile = ({ navigation }: any): JSX.Element => {
   const { t, i18n } = useTranslation();

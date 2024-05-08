@@ -12,13 +12,13 @@
       "@components/*": ["components/*"],
       "@screens/*": ["screens/*"],
       "@navigation/*": ["navigation/*"],
-      "@redux/*": ["redux/*"],
+      "@store/*": ["store/*"],
       "@hooks/*": ["hooks/*"],
       "@context/*": ["context/*"],
       "@assets/*": ["assets/*"],
       "@api/*": ["api/*"],
-      "@services/*": ["services/*"],
-      "@i18n/*": ["i18n/*"],
+      "@network/*": ["network/*"],
+      "@localization/*": ["localization/*"],
       "@utils/*": ["utils/*"],
       "@theme/*": ["theme/*"]
     }

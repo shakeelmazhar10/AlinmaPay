@@ -1,16 +1,16 @@
 import React from 'react';
 import IconMaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useTypedDispatch, useTypedSelector } from '@redux/store';
-import { setLocalization } from '@redux/slices/localization-slice';
+import { useTypedDispatch, useTypedSelector } from '@store/store';
+import { setLocalization } from '@store/slices/localization-slice';
 import { useTranslation } from 'react-i18next';
 import { languages, screenNames } from '@utils/enums';
 import styles from './home.style';
 import { constants } from '@utils/index';
 import { RNPressable, RNText, RNView } from '@components/atoms';
 import colors from '@theme/colors';
-import { SafeAreaViewComp } from '@components/pages';
+import { SafeAreaViewComp } from '@components/templates';
 import { ToggleButton } from '@components/molecules';
-import useLocalization from '@hooks/localization.hook';
+import useLocalization from '@localization/localization.hook';
 
 const Home = ({ navigation }: any): JSX.Element => {
   const dispatch = useTypedDispatch();
