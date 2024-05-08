@@ -1,14 +1,14 @@
 /**
  * Defines a set of layout and styling constants for consistent design across the application.
  */
+import { constants } from '@utilities/index';
 import { Dimensions } from 'react-native';
 import { spacing } from './spacing';
 import { typography } from './typography';
-import { constants } from '@utils/index';
 
 const { width, height } = Dimensions.get('screen');
 
-const layout =  {
+const layout = {
   window: {
     width,
     height

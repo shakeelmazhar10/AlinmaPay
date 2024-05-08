@@ -1,8 +1,8 @@
+import colors from '@styles/colors';
 import React from 'react';
 import { Pressable } from 'react-native';
-import colors from '@theme/colors';
-import styles from './rn-pressable.style';
 import { RNPressableProps } from './rn-pressable.interface';
+import styles from './rn-pressable.style';
 
 /**
  * A component that responds to press interactions.

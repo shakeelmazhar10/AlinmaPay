@@ -1,8 +1,8 @@
+import colors from '@styles/colors';
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
-import colors from '@theme/colors';
-import styles from './safe-area-view.style';
 import { SafeAreaViewProps } from 'react-native-safe-area-context';
+import styles from './safe-area-view.style';
 
 /**
  * SafeAreaViewComp component renders a safe area view with custom styles.

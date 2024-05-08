@@ -19,8 +19,8 @@
       "@api/*": ["api/*"],
       "@network/*": ["network/*"],
       "@localization/*": ["localization/*"],
-      "@utils/*": ["utils/*"],
-      "@theme/*": ["theme/*"]
+      "@utilities/*": ["utilities/*"],
+      "@styles/*": ["styles/*"]
     }
   },
   /* Completeness */

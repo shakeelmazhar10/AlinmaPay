@@ -1,10 +1,9 @@
 /**
  * i18n is a library for internationalization (i18n) in JavaScript applications.
  */
+import { translations } from '@app/localization/translations';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { languages } from '@utils/enums';
-import { translations } from '@app/localization/translations';
 
 /**
  * Resources containing translations for different languages.

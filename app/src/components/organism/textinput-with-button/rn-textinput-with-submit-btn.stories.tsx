@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { SCALE_1, SCALE_10, SCALE_14, SCALE_16, SCALE_4, SCALE_50, SCALE_6, SCALE_60 } from '@theme/spacing';
 import { RNView } from '@components/atoms';
-import colors from '@theme/colors';
 import { RNTextInputWithSubmitBtn } from '@components/organism';
+import type { Meta, StoryObj } from '@storybook/react';
+import colors from '@styles/colors';
+import { SCALE_1, SCALE_10, SCALE_14, SCALE_16, SCALE_4, SCALE_6, SCALE_60 } from '@styles/spacing';
+import React from 'react';
 
 const RNTextInputWithSubmitBtnMeta: Meta<typeof RNTextInputWithSubmitBtn> = {
   title: 'components/RNTextInputWithSubmitBtn',

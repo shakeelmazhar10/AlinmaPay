@@ -1,16 +1,16 @@
-import React from 'react';
-import IconMaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useTypedDispatch, useTypedSelector } from '@store/store';
-import { setLocalization } from '@store/slices/localization-slice';
-import { useTranslation } from 'react-i18next';
-import { languages, screenNames } from '@utils/enums';
-import styles from './home.style';
-import { constants } from '@utils/index';
 import { RNPressable, RNText, RNView } from '@components/atoms';
-import colors from '@theme/colors';
-import { SafeAreaViewComp } from '@components/templates';
 import { ToggleButton } from '@components/molecules';
+import { SafeAreaViewComp } from '@components/templates';
 import useLocalization from '@localization/localization.hook';
+import { setLocalization } from '@store/slices/localization-slice';
+import { useTypedDispatch, useTypedSelector } from '@store/store';
+import colors from '@styles/colors';
+import { languages, screenNames } from '@utilities/enums';
+import { constants } from '@utilities/index';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import IconMaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import styles from './home.style';
 
 const Home = ({ navigation }: any): JSX.Element => {
   const dispatch = useTypedDispatch();

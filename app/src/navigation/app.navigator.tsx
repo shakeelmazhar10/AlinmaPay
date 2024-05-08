@@ -2,7 +2,7 @@ import TabNavigation from '@app/navigation/tab-navigation';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useTypedSelector } from '@store/store';
-import { screenNames } from '@utils/enums';
+import { screenNames } from '@utilities/enums';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 

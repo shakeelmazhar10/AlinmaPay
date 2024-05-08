@@ -1,8 +1,8 @@
-import { FONT_WEIGHT_EXTRA_BOLD } from '@theme/typography';
-import colors from '@theme/colors';
+import colors from '@styles/colors';
+import { FONT_WEIGHT_EXTRA_BOLD } from '@styles/typography';
 import { StyleSheet } from 'react-native';
 
-const styles =  StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     paddingTop: 10,
@@ -32,7 +32,7 @@ const styles =  StyleSheet.create({
     padding: 10
   },
   footerText: {
-     color: colors.grey
+    color: colors.grey
   }
 });
 

@@ -1,6 +1,6 @@
-import { ThemeType } from '@app/utils/types-and-interfaces';
 import { useTypedSelector } from '@store/store';
-import theme from '@theme/index';
+import theme from '@styles/index';
+import { ThemeType } from '@utilities/types-and-interfaces';
 
 /**
  * Custom hook for accessing theme-related data from Redux store.

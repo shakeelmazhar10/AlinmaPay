@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 import { RNText, RNView } from '@components/atoms';
-import colors from '@theme/colors';
-import { SCALE_12, SCALE_16, SCALE_20 } from '@theme/spacing';
+import type { Meta, StoryObj } from '@storybook/react';
+import colors from '@styles/colors';
+import { SCALE_12, SCALE_16, SCALE_20 } from '@styles/spacing';
+import React from 'react';
 
 const RNTextMeta: Meta<typeof RNText> = {
   title: 'components/text/RNText',

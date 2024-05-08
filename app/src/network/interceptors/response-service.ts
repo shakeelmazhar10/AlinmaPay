@@ -1,4 +1,4 @@
-import { constants } from '@utils/index';
+import { constants } from '@utilities/index';
 
 /**
  * Represents the data returned in a successful response.

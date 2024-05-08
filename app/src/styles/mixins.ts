@@ -1,5 +1,5 @@
+import { constants } from '@utilities/index';
 import { Dimensions, PixelRatio, Platform, StatusBar } from 'react-native';
-import { constants } from '@utils/index';
 
 const { width: WINDOW_WIDTH, height: WINDOW_HEIGHT } = Dimensions.get('window');
 const guidelineBaseWidth = constants.IDLE_SCREEN_WIDTH;

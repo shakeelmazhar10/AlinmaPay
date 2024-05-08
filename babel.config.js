@@ -18,10 +18,10 @@ module.exports = {
           '@api': './app/src/api',
           '@network': './app/src/network',
           '@localization': './app/src/localization',
-          '@theme': './app/src/theme',
-          '@utils': './app/src/utils'
+          '@styles': './app/src/styles',
+          '@utilities': './app/src/utilities'
         }
       }
     ]
   ]
-}
+};

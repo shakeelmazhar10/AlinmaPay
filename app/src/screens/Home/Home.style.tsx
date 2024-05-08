@@ -1,6 +1,5 @@
-import { spacing } from '@app/theme/spacing';
-import { FONT_WEIGHT_EXTRA_BOLD } from '@app/theme/typography';
-import colors from '@theme/colors';
+import colors from '@styles/colors';
+import { FONT_WEIGHT_EXTRA_BOLD } from '@styles/typography';
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
