@@ -10,7 +10,7 @@ import { constants } from '@utilities/index';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import IconMaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import styles from './Home.style';
+import styles from './home.style';
 
 const Home = ({ navigation }: any): JSX.Element => {
   const dispatch = useTypedDispatch();
