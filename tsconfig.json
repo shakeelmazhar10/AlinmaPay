@@ -12,15 +12,15 @@
       "@components/*": ["components/*"],
       "@screens/*": ["screens/*"],
       "@navigation/*": ["navigation/*"],
-      "@redux/*": ["redux/*"],
+      "@store/*": ["store/*"],
       "@hooks/*": ["hooks/*"],
       "@context/*": ["context/*"],
       "@assets/*": ["assets/*"],
       "@api/*": ["api/*"],
-      "@services/*": ["services/*"],
-      "@i18n/*": ["i18n/*"],
-      "@utils/*": ["utils/*"],
-      "@theme/*": ["theme/*"]
+      "@network/*": ["network/*"],
+      "@localization/*": ["localization/*"],
+      "@utilities/*": ["utilities/*"],
+      "@styles/*": ["styles/*"]
     }
   },
   /* Completeness */

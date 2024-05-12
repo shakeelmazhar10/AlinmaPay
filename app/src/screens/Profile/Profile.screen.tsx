@@ -1,13 +1,13 @@
+import { RNPressable, RNText, RNView } from '@components/atoms';
+import { SafeAreaViewComp } from '@components/templates';
+import useLocalization from '@localization/localization.hook';
+import colors from '@styles/colors';
+import { SCALE_100 } from '@styles/spacing';
 import React from 'react';
-import { Alert } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './profile.style';
-import { RNPressable, RNText, RNView } from '@components/atoms';
-import { SCALE_100 } from '@theme/spacing';
-import colors from '@theme/colors';
-import { SafeAreaViewComp } from '@components/pages';
-import useLocalization from '@hooks/localization.hook';
 
 const Profile = ({ navigation }: any): JSX.Element => {
   const { t, i18n } = useTranslation();

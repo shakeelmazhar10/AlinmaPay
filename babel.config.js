@@ -11,17 +11,17 @@ module.exports = {
           '@components': './app/src/components',
           '@screens': './app/src/screens',
           '@navigation': './app/src/navigation',
-          '@redux': './app/src/redux',
+          '@store': './app/src/store',
           '@hooks': './app/src/hooks',
           '@context': './app/src/context',
           '@assets': './app/src/assets',
           '@api': './app/src/api',
-          '@services': './app/src/services',
-          '@i18n': './app/src/i18n',
-          '@theme': './app/src/theme',
-          '@utils': './app/src/utils'
+          '@network': './app/src/network',
+          '@localization': './app/src/localization',
+          '@styles': './app/src/styles',
+          '@utilities': './app/src/utilities'
         }
       }
     ]
   ]
-}
+};
