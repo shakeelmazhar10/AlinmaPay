@@ -1,9 +1,9 @@
 import { TextStyle } from 'react-native';
 
 /**
- * Props for the RNTitle2Text component.
+ * Props for the RNCaption2Text component.
  */
-export interface RNTitle2TextProps {
+export interface RNCaption2TextProps {
   /**
    * testID for the flatlist to test the element.
    */
