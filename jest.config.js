@@ -3,8 +3,5 @@ module.exports = {
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest'
   },
-  testPathIgnorePatterns: [
-    './node_modules/', // Ignore node_modules
-    './app/App.tsx' // Ignore App.ts
-  ]
+  setupFilesAfterEnv: ['./__mocks__/setup-file.ts']
 };

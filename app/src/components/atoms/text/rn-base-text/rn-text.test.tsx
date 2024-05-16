@@ -1,36 +1,37 @@
-// RNText.test.tsx
-
 import { render } from '@testing-library/react-native';
 import React from 'react';
 import RNText from './rn-text.component';
 
-// Mocking react-i18next
-jest.mock('react-i18next', () => ({
-  useTranslation: () => ({ t: (key: string) => key })
-}));
-
-describe('RNText', () => {
-  test('renders text correctly', () => {
-    const { getByText } = render(<RNText text="hello" />);
-    const textElement = getByText('hello');
-    expect(textElement).toBeDefined();
+describe('RNText Component', () => {
+  it('renders text correctly', () => {
+    const { getByText } = render(<RNText text="Hello World" />);
+    expect(getByText('Hello World')).toBeTruthy();
   });
 
-  test('renders children correctly', () => {
-    const { getByText } = render(<RNText>Hello, World!</RNText>);
-    const textElement = getByText('Hello, World!');
-    expect(textElement).toBeDefined();
+  it('renders children correctly', () => {
+    const { getByText } = render(
+      <RNText>
+        <RNText>Hello Children</RNText>
+      </RNText>
+    );
+    expect(getByText('Hello Children')).toBeTruthy();
   });
 
-  test('applies style correctly', () => {
-    const { getByTestId } = render(<RNText testID="text" style={{ color: 'red' }} />);
-    const textElement = getByTestId('text');
-    expect(textElement).toHaveStyle({ color: 'red' });
+  it('renders with testID prop', () => {
+    const { getByTestId } = render(<RNText testID="test-id" />);
+    expect(getByTestId('test-id')).toBeTruthy();
   });
 
-  test('applies numberOfLines correctly', () => {
-    const { getByTestId } = render(<RNText testID="text" numberOfLines={2} />);
-    const textElement = getByTestId('text');
-    expect(textElement).toHaveProp('numberOfLines', 2);
+  it('renders with custom style', () => {
+    const customStyle = { color: 'red' };
+    const { getByText } = render(<RNText text="Custom Style" style={customStyle} />);
+    const textComponent = getByText('Custom Style');
+    expect(textComponent.props.style).toContain(customStyle);
+  });
+
+  it('renders with specified number of lines', () => {
+    const { getByText } = render(<RNText text="Multiple Lines" numberOfLines={2} />);
+    const textComponent = getByText('Multiple Lines');
+    expect(textComponent.props.numberOfLines).toBe(2);
   });
 });
